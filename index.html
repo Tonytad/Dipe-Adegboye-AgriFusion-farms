@@ -1,0 +1,1400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dipe Adegboye AgriFusion Farms — Premium Agricultural Produce</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;
+      0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="img/Icon.png" />
+    <style>
+      /* ── TOKENS ── */
+      :root {
+        --green-deep: #1a3a1f;
+        --green-mid: #2d6a35;
+        --green-light: #4caf50;
+        --gold: #c8a84b;
+        --gold-light: #e8c96a;
+        --cream: #faf6ed;
+        --sand: #f4ede0;
+        --brown-light: #a0622a;
+        --white: #ffffff;
+        --text-dark: #1a2016;
+        --text-mid: #3d4a38;
+        --text-muted: #7a8775;
+      }
+
+      /* ── RESET ── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--cream);
+        color: var(--text-dark);
+        overflow-x: hidden;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 6%;
+        background: rgba(26, 58, 31, 0.92);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(200, 168, 75, 0.25);
+        transition: all 0.3s;
+      }
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--gold-light);
+        letter-spacing: 0.02em;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .logo-leaf {
+        font-size: 1.8rem;
+      }
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        list-style: none;
+      }
+      .nav-links a {
+        color: rgba(255, 255, 255, 0.82);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--gold-light);
+      }
+      .nav-cta {
+        background: var(--gold);
+        color: var(--green-deep) !important;
+        padding: 8px 20px;
+        border-radius: 2px;
+        font-weight: 600 !important;
+      }
+      .nav-cta:hover {
+        background: var(--gold-light) !important;
+      }
+
+      /* ── HERO ── */
+      #hero {
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(26, 58, 31, 0.88) 0%,
+            rgba(45, 106, 53, 0.65) 50%,
+            rgba(26, 58, 31, 0.82) 100%
+          ),
+          url("img/2151486462.jpg") center/cover no-repeat;
+        z-index: 0;
+      }
+      .hero-bg::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 120px;
+        background: linear-gradient(to top, var(--cream), transparent);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 0 6%;
+        max-width: 760px;
+        animation: fadeUp 0.9s ease both;
+      }
+      .hero-tag {
+        display: inline-block;
+        background: var(--gold);
+        color: var(--green-deep);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 6px 16px;
+        border-radius: 2px;
+        margin-bottom: 24px;
+      }
+      .hero-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.6rem, 6vw, 5rem);
+        font-weight: 900;
+        line-height: 1.08;
+        color: var(--white);
+        margin-bottom: 22px;
+      }
+      .hero-title em {
+        color: var(--gold-light);
+        font-style: italic;
+      }
+      .hero-sub {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.82);
+        max-width: 520px;
+        margin-bottom: 40px;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .btn-primary {
+        background: var(--gold);
+        color: var(--green-deep);
+        padding: 14px 32px;
+        border-radius: 2px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        letter-spacing: 0.02em;
+        transition: all 0.2s;
+        border: 2px solid var(--gold);
+      }
+      .btn-primary:hover {
+        background: var(--gold-light);
+        border-color: var(--gold-light);
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--white);
+        padding: 14px 32px;
+        border-radius: 2px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        transition: all 0.2s;
+      }
+      .btn-outline:hover {
+        border-color: var(--white);
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .hero-stats {
+        position: absolute;
+        bottom: 60px;
+        right: 6%;
+        z-index: 2;
+        display: flex;
+        gap: 40px;
+        animation: fadeUp 1.1s 0.3s ease both;
+      }
+      .stat {
+        text-align: center;
+      }
+      .stat-num {
+        font-family: "Playfair Display", serif;
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: var(--gold-light);
+        display: block;
+      }
+      .stat-label {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.65);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      /* ── SECTION BASE ── */
+      section {
+        padding: 96px 6%;
+      }
+
+      .section-tag {
+        display: inline-block;
+        background: rgba(200, 168, 75, 0.15);
+        color: var(--brown-light);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border-radius: 2px;
+        margin-bottom: 16px;
+        border-left: 3px solid var(--gold);
+      }
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 900;
+        line-height: 1.15;
+        color: var(--green-deep);
+        margin-bottom: 18px;
+      }
+      .section-lead {
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: var(--text-mid);
+        max-width: 620px;
+        margin-bottom: 56px;
+      }
+
+      /* Centred section header block */
+      .section-header {
+        text-align: center;
+        max-width: 620px;
+        margin: 0 auto 56px;
+      }
+      .section-header .section-lead {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Dark-section text overrides */
+      .on-dark .section-tag {
+        background: rgba(200, 168, 75, 0.2);
+        color: var(--gold-light);
+        border-color: var(--gold);
+      }
+      .on-dark .section-title {
+        color: var(--white);
+      }
+      .on-dark .section-lead {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* ── ABOUT ── */
+      #about {
+        background: var(--cream);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .about-img-wrap {
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+        height: 480px;
+      }
+      .about-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+      .about-img-wrap:hover img {
+        transform: scale(1.05);
+      }
+      .about-badge {
+        position: absolute;
+        bottom: 24px;
+        left: 24px;
+        background: var(--green-deep);
+        color: var(--gold-light);
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 14px 20px;
+        border-radius: 2px;
+        border-left: 4px solid var(--gold);
+      }
+      .about-text .section-lead {
+        margin-bottom: 28px;
+      }
+      .about-checks {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 36px;
+      }
+      .about-checks li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 0.95rem;
+        color: var(--text-mid);
+        line-height: 1.5;
+      }
+      .check-icon {
+        color: var(--green-light);
+        font-size: 1.1rem;
+        margin-top: 1px;
+        flex-shrink: 0;
+      }
+      .reg-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(45, 106, 53, 0.1);
+        color: var(--green-mid);
+        padding: 10px 18px;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border: 1px solid rgba(45, 106, 53, 0.25);
+      }
+
+      /* ── PRODUCTS ── */
+      #products {
+        background: var(--green-deep);
+      }
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+      }
+      .product-card {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(200, 168, 75, 0.2);
+        border-radius: 4px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .product-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--gold);
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .product-img {
+        height: 200px;
+        overflow: hidden;
+      }
+      .product-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+      .product-card:hover .product-img img {
+        transform: scale(1.08);
+      }
+      .product-body {
+        padding: 24px;
+      }
+      .product-icon {
+        font-size: 2rem;
+        margin-bottom: 12px;
+        display: block;
+      }
+      .product-name {
+        font-family: "Playfair Display", serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--gold-light);
+        margin-bottom: 10px;
+      }
+      .product-desc {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.68);
+        line-height: 1.65;
+      }
+
+      /* ── NURSERY ── */
+      #nursery {
+        background: var(--sand);
+      }
+      .nursery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .nursery-checks {
+        margin-bottom: 28px;
+      }
+      .nursery-imgs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .nursery-imgs img {
+        width: 100%;
+        border-radius: 4px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      .nursery-imgs img:first-child {
+        grid-column: 1/-1;
+        height: 220px;
+      }
+      .nursery-imgs img:not(:first-child) {
+        height: 160px;
+      }
+      .nursery-imgs img:hover {
+        transform: scale(1.03);
+      }
+      .nursery-feature {
+        background: var(--green-deep);
+        color: var(--white);
+        padding: 24px;
+        border-radius: 4px;
+        margin-top: 20px;
+        border-left: 4px solid var(--gold);
+      }
+      .nursery-feature h4 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.1rem;
+        color: var(--gold-light);
+        margin-bottom: 8px;
+      }
+      .nursery-feature p {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.6;
+      }
+
+      /* ── GALLERY ── */
+      #gallery {
+        background: var(--cream);
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 4px;
+        position: relative;
+        cursor: pointer;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.07);
+      }
+      .gallery-item:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+        height: 420px;
+      }
+      .gallery-item:nth-child(2) {
+        height: 200px;
+      }
+      .gallery-item:nth-child(3) {
+        height: 200px;
+      }
+      .gallery-item:nth-child(4) {
+        height: 200px;
+      }
+      .gallery-item:nth-child(5) {
+        height: 200px;
+      }
+      .gallery-item:nth-child(6) {
+        grid-column: span 2;
+        height: 200px;
+      }
+      .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(26, 58, 31, 0.7), transparent);
+        opacity: 0;
+        transition: opacity 0.3s;
+        display: flex;
+        align-items: flex-end;
+        padding: 16px;
+      }
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+      .gallery-caption {
+        color: var(--white);
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      /* ── TEAM ── */
+      #team {
+        background: var(--green-deep);
+      }
+      .team-solo {
+        max-width: 380px;
+        margin: 0 auto;
+      }
+      .team-card {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(200, 168, 75, 0.2);
+        border-radius: 4px;
+        overflow: hidden;
+        transition: all 0.3s;
+        text-align: center;
+      }
+      .team-card:hover {
+        border-color: var(--gold);
+        transform: translateY(-4px);
+      }
+      .team-photo {
+        height: 320px;
+        overflow: hidden;
+      }
+      .team-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        transition: transform 0.5s;
+      }
+      .team-card:hover .team-photo img {
+        transform: scale(1.05);
+      }
+      .team-body {
+        padding: 28px 24px;
+      }
+      .team-name {
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--gold-light);
+        margin-bottom: 6px;
+      }
+      .team-role {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.55);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .team-bio {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.7;
+      }
+
+      /* ── PRODUCTS FOR SALE ── */
+      #sale {
+        background: var(--sand);
+      }
+      .sale-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+      }
+      .sale-card {
+        background: var(--white);
+        border-radius: 4px;
+        overflow: hidden;
+        transition: all 0.3s;
+        border: 1px solid rgba(200, 168, 75, 0.25);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      }
+      .sale-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        border-color: var(--gold);
+      }
+      .sale-img {
+        height: 180px;
+        overflow: hidden;
+      }
+      .sale-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+      .sale-card:hover .sale-img img {
+        transform: scale(1.07);
+      }
+      .sale-body {
+        padding: 20px;
+      }
+      .sale-name {
+        font-family: "Playfair Display", serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--green-deep);
+        margin-bottom: 8px;
+      }
+      .sale-desc {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 16px;
+      }
+      .sale-tag-row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .sale-tag {
+        background: rgba(45, 106, 53, 0.1);
+        color: var(--green-mid);
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 2px;
+      }
+
+      /* ── CONTACT ── */
+      #contact {
+        background: var(--green-deep);
+      }
+      .contact-inner {
+        max-width: 640px;
+      }
+      .contact-intro {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 1rem;
+        line-height: 1.75;
+        margin-bottom: 36px;
+      }
+      .contact-item {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        margin-bottom: 24px;
+      }
+      .contact-icon {
+        width: 44px;
+        height: 44px;
+        background: rgba(200, 168, 75, 0.15);
+        border: 1px solid rgba(200, 168, 75, 0.3);
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+      .contact-item-text h4 {
+        color: var(--gold-light);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+      .contact-item-text p,
+      .contact-item-text a {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.95rem;
+        text-decoration: none;
+      }
+      .contact-item-text a:hover {
+        color: var(--gold-light);
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: #0f2212;
+        padding: 48px 6% 32px;
+        border-top: 1px solid rgba(200, 168, 75, 0.15);
+      }
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: 48px;
+        margin-bottom: 48px;
+      }
+      .footer-logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
+        font-weight: 900;
+        color: var(--gold-light);
+        margin-bottom: 14px;
+        display: block;
+      }
+      .footer-desc {
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 0.88rem;
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+      .footer-col h4 {
+        color: var(--gold-light);
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .footer-col ul {
+        list-style: none;
+      }
+      .footer-col ul li {
+        margin-bottom: 10px;
+      }
+      .footer-col ul li a {
+        color: rgba(255, 255, 255, 0.55);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s;
+      }
+      .footer-col ul li a:hover {
+        color: var(--gold-light);
+      }
+      .cac-badge {
+        color: var(--gold-light);
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .footer-copy {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.82rem;
+      }
+      .footer-credit {
+        color: rgba(255, 255, 255, 0.25);
+        font-size: 0.8rem;
+      }
+
+      /* ── ANIMATIONS ── */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(32px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: all 0.65s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 900px) {
+        .about-grid,
+        .nursery-grid {
+          grid-template-columns: 1fr;
+        }
+        .gallery-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .gallery-item:nth-child(1) {
+          grid-column: 1/-1;
+        }
+        .gallery-item:nth-child(6) {
+          grid-column: 1/-1;
+        }
+        .hero-stats {
+          position: static;
+          padding: 0 6% 40px;
+          flex-wrap: wrap;
+          gap: 24px;
+        }
+        #hero {
+          flex-direction: column;
+        }
+        .hero-content {
+          padding-top: 120px;
+        }
+        .nav-links {
+          display: none;
+        }
+        .footer-inner {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="logo">
+        <span class="logo-leaf">🌿</span> Dipe Adegboye AgriFusion Farms
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#nursery">Nursery</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <span class="hero-tag">🌴 CAC Registered Nigerian Farm Business</span>
+        <h1 class="hero-title">
+          Nature's Finest,<br /><em>Cultivated with Purpose.</em>
+        </h1>
+        <p class="hero-sub">
+          From thriving palm plantations and cashew groves to premium cocoa
+          cultivation, Dipe Adegboye AgriFusion Farms delivers quality
+          agricultural produce straight from the soil of Nigeria to your table
+          and industry.
+        </p>
+        <div class="hero-btns">
+          <a href="#products" class="btn-primary">Our Products</a>
+          <a href="#contact" class="btn-outline">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Hectares Farmed</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">12+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">4</span>
+          <span class="stat-label">Core Produce</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="about-grid reveal">
+        <div class="about-img-wrap">
+          <img
+            src="img/WhatsApp Image 2026-05-07 at 8.57.39 PM.jpeg"
+            alt="Palm Plantation"
+          />
+          <div class="about-badge">Est. 2012 · CAC Registered ✓</div>
+        </div>
+        <div class="about-text">
+          <span class="section-tag">Who We Are</span>
+          <h2 class="section-title">
+            Rooted in the Soil,<br />Growing for Nigeria
+          </h2>
+          <p class="section-lead">
+            Dipe Adegboye AgriFusion Farms is a fully registered Nigerian
+            agricultural enterprise dedicated to sustainable cultivation of palm
+            trees, palm kernel, cocoa, and cashew. We operate a full production
+            cycle from nursery seedling to refined product delivery.
+          </p>
+          <ul class="about-checks">
+            <li>
+              <span class="check-icon">✅</span> Palm tree cultivation and palm
+              kernel production on large-scale plantations
+            </li>
+            <li>
+              <span class="check-icon">✅</span> Premium palm oil refined and
+              packaged in kegs and drums for bulk buyers
+            </li>
+            <li>
+              <span class="check-icon">✅</span> Cashew nut farming from
+              planting through processing and export-ready packaging
+            </li>
+            <li>
+              <span class="check-icon">✅</span> Cocoa beans grown and harvested
+              to international quality standards
+            </li>
+            <li>
+              <span class="check-icon">✅</span> In-house nursery producing
+              cocoa and palm kernel seedlings for sale
+            </li>
+          </ul>
+          <div class="reg-badge">
+            🏢 Registered with the Corporate Affairs Commission (CAC), Nigeria
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products">
+      <div class="section-header on-dark">
+        <span class="section-tag">What We Produce</span>
+        <h2 class="section-title">Our Agricultural Products</h2>
+        <p class="section-lead">
+          A diverse portfolio of high-value agricultural produce cultivated
+          across our expansive farmlands with best-in-class farming practices.
+        </p>
+      </div>
+      <div class="products-grid reveal">
+        <div class="product-card">
+          <div class="product-img">
+            <img
+              src="img/WhatsApp Image 2026-05-07 at 8.57.39 PM.jpeg"
+              alt="Palm Trees"
+            />
+          </div>
+          <div class="product-body">
+            <span class="product-icon">🌴</span>
+            <div class="product-name">Palm Tree Cultivation</div>
+            <p class="product-desc">
+              Large-scale oil palm plantation management producing fresh fruit
+              bunches (FFB). Our trees are maintained for maximum yield per
+              hectare, contributing to Nigeria's agricultural output.
+            </p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img
+              src="img\WhatsApp Image 2026-04-27 at 8.57.38 PM.jpeg"
+              alt="Palm Kernel"
+            />
+          </div>
+          <div class="product-body">
+            <span class="product-icon">🥜</span>
+            <div class="product-name">Palm Kernel</div>
+            <p class="product-desc">
+              Premium quality palm kernel extracted using modern processing
+              methods. Sold in bulk to industrial buyers, soap manufacturers,
+              and commodity traders across Nigeria and West Africa.
+            </p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img
+              src="img\WhatsApp Image 2026-05-07 at 8.58.12 PM.jpeg"
+              alt="Cashew"
+            />
+          </div>
+          <div class="product-body">
+            <span class="product-icon">🌰</span>
+            <div class="product-name">Cashew</div>
+            <p class="product-desc">
+              Our cashew orchards yield high-quality raw cashew nuts (RCN)
+              harvested seasonally. Sold to local processors and export
+              merchants looking for premium Nigerian cashew.
+            </p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="img/12990.jpg" alt="Cocoa" />
+          </div>
+          <div class="product-body">
+            <span class="product-icon">🍫</span>
+            <div class="product-name">Cocoa</div>
+            <p class="product-desc">
+              Quality-grade cocoa beans grown and fermented on-farm, meeting
+              export and domestic processing standards. We supply to chocolate
+              manufacturers, cocoa processors, and commodity exporters.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NURSERY -->
+    <section id="nursery">
+      <div class="nursery-grid reveal">
+        <div class="nursery-text">
+          <span class="section-tag">Nursery Services</span>
+          <h2 class="section-title">Seedlings for<br />Tomorrow's Harvest</h2>
+          <p class="section-lead">
+            Our on-site nursery is one of the most comprehensive in the region,
+            producing high-germination, disease-resistant seedlings that give
+            farmers the best possible start.
+          </p>
+          <ul class="about-checks nursery-checks">
+            <li>
+              <span class="check-icon">🌱</span
+              ><strong>Cocoa Seedlings</strong> — Hybrid varieties selected for
+              high yield and disease resistance. Ready for transplanting at the
+              optimal growth stage.
+            </li>
+            <li>
+              <span class="check-icon">🌱</span
+              ><strong>Palm Kernel Seedlings</strong> — Tenera-variety palm
+              seedlings verified for superior fruit quality and oil extraction
+              rates.
+            </li>
+            <li>
+              <span class="check-icon">🌱</span>Bulk orders available for
+              large-scale plantation establishment projects
+            </li>
+            <li>
+              <span class="check-icon">🌱</span>Agricultural advisory support
+              included with large seedling orders
+            </li>
+          </ul>
+          <div class="nursery-feature">
+            <h4>Order Seedlings Today</h4>
+            <p>
+              Contact us to discuss bulk seedling orders, pricing, and delivery
+              arrangements. We supply to individual farmers, cooperatives, and
+              agro-investment projects.
+            </p>
+          </div>
+        </div>
+        <div class="nursery-imgs">
+          <img
+            src="img/7213d803eb453dbf0dccc7954be14d6c.jpg"
+            alt="Nursery seedlings"
+          />
+          <img
+            src="img/WhatsApp Image 2026-05-11 at 8.57.51 AM (1).jpeg"
+            alt="Cocoa seedlings"
+          />
+          <img
+            src="img/WhatsApp Image 2026-05-11 at 8.57.51 AM.jpeg"
+            alt="Palm seedlings"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="section-header">
+        <span class="section-tag">Farm Gallery</span>
+        <h2 class="section-title">Life on the Farm</h2>
+        <p class="section-lead">
+          A glimpse into our plantations, production lines, and the people who
+          make it all possible.
+        </p>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item">
+          <img
+            src="img/WhatsApp Image 2026-04-27 at 8.57.28 PM.jpeg"
+            alt="Palm plantation"
+          />
+          <div class="gallery-overlay">
+            <span class="gallery-caption">Palm Oil Plantation</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="img/400270d237461990e0882f9d4ea95cbd.jpg"
+            alt="Cocoa pods"
+          />
+          <div class="gallery-overlay">
+            <span class="gallery-caption">Palm Oil Products</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="img/ea19dfcbe4811a93ffaa7a8cdafed59a.jpg"
+            alt="Cashew harvest"
+          />
+          <div class="gallery-overlay">
+            <span class="gallery-caption">Cashew Harvest Season</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="img/WhatsApp Image 2026-05-11 at 8.57.51 AM (1).jpeg"
+            alt="Nursery"
+          />
+          <div class="gallery-overlay">
+            <span class="gallery-caption">Our Seedling Nursery</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="img/6721fc7d5001fe41d7c840e76da80283.jpg"
+            alt="Farm workers"
+          />
+          <div class="gallery-overlay">
+            <span class="gallery-caption">Harvest Day</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="img/WhatsApp Image 2026-04-27 at 8.57.38 PM (1).jpeg"
+            alt="Palm oil processing"
+          />
+          <div class="gallery-overlay">
+            <span class="gallery-caption">Palm Processing Facility</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team">
+      <div class="section-header on-dark">
+        <span class="section-tag">Leadership</span>
+        <h2 class="section-title">The Face Behind<br />AgriFusion Farms</h2>
+        <p class="section-lead">
+          Visionary agricultural entrepreneur committed to building Nigeria's
+          farming future.
+        </p>
+      </div>
+      <div class="team-solo reveal">
+        <div class="team-card">
+          <div class="team-photo">
+            <img src="img/DIpe.jpg" alt="Dipe Adegboye" />
+          </div>
+          <div class="team-body">
+            <div class="team-name">Dipe Adegboye</div>
+            <div class="team-role">Founder &amp; Chief Executive Officer</div>
+            <p class="team-bio">
+              Dipe Adegboye is the visionary founder and CEO of Dipe Adegboye
+              AgriFusion Farms. With deep roots in Nigerian agriculture, he
+              built the business from the ground up, establishing large-scale
+              palm, cocoa, and cashew operations alongside a thriving nursery
+              program. His leadership drives quality, sustainability, and growth
+              across every aspect of the farm.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS FOR SALE -->
+    <section id="sale">
+      <div class="section-header">
+        <span class="section-tag">Available for Purchase</span>
+        <h2 class="section-title">Products We Sell</h2>
+        <p class="section-lead">
+          We supply directly to households, retailers, manufacturers, and
+          commodity traders. All products are available for bulk and retail
+          purchase.
+        </p>
+      </div>
+      <div class="sale-cards reveal">
+        <div class="sale-card">
+          <div class="sale-img">
+            <img
+              src="img/400270d237461990e0882f9d4ea95cbd.jpg"
+              alt="Palm Oil Kegs"
+            />
+          </div>
+          <div class="sale-body">
+            <div class="sale-name">🛢️ Palm Oil Kegs</div>
+            <p class="sale-desc">
+              Premium grade red palm oil packaged in standard 25-litre kegs.
+              Ideal for households, food businesses, and retailers. Fresh from
+              our press, no additives.
+            </p>
+            <div class="sale-tag-row">
+              <span class="sale-tag">Kegs in Sizes</span>
+              <span class="sale-tag">Retail &amp; Bulk</span>
+              <span class="sale-tag">Fresh Grade</span>
+            </div>
+          </div>
+        </div>
+        <div class="sale-card">
+          <div class="sale-img">
+            <img
+              src="img/dd350d31262769b8657128109b73a834.jpg"
+              alt="Palm Oil Drums"
+            />
+          </div>
+          <div class="sale-body">
+            <div class="sale-name">🏭 Palm Oil Drums</div>
+            <p class="sale-desc">
+              High-volume palm oil in 200-litre drums for industrial buyers,
+              food processors, soap manufacturers, and commodity traders.
+              Consistent quality guaranteed.
+            </p>
+            <div class="sale-tag-row">
+              <span class="sale-tag">200L Drum</span>
+              <span class="sale-tag">Industrial Grade</span>
+              <span class="sale-tag">Bulk Order</span>
+            </div>
+          </div>
+        </div>
+        <div class="sale-card">
+          <div class="sale-img">
+            <img
+              src="img/6e1c56b5953e13d479341cdae4eaf6f8.jpg"
+              alt="Cocoa Beans"
+            />
+          </div>
+          <div class="sale-body">
+            <div class="sale-name">🍫 Palm Kernel</div>
+            <p class="sale-desc">
+              Well preserved, properly stored palm kernel meeting domestic and
+              export specifications. Supplied in bags to processors,
+              manufacturers, and commodity exporters.
+            </p>
+            <div class="sale-tag-row">
+              <span class="sale-tag">Export Grade</span>
+              <span class="sale-tag">50kg Bags</span>
+              <span class="sale-tag">Quality Guaranteed</span>
+            </div>
+          </div>
+        </div>
+        <div class="sale-card">
+          <div class="sale-img">
+            <img
+              src="img/WhatsApp Image 2026-05-11 at 8.57.51 AM (1).jpeg"
+              alt="Seedlings"
+            />
+          </div>
+          <div class="sale-body">
+            <div class="sale-name">🌱 Nursery Seedlings</div>
+            <p class="sale-desc">
+              Cocoa and palm kernel seedlings from our certified nursery. High
+              germination rates, hybrid-quality stock. Sold individually or in
+              bulk lots for plantation establishment.
+            </p>
+            <div class="sale-tag-row">
+              <span class="sale-tag">Cocoa Seedlings</span>
+              <span class="sale-tag">Oil Palm Seedlings</span>
+              <span class="sale-tag">Bulk Available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="contact-inner reveal">
+        <span class="section-tag on-dark">Get In Touch</span>
+        <h2 class="section-title on-dark">Let's Do Business Together</h2>
+        <p class="contact-intro">
+          Whether you're looking to purchase palm oil, raw cocoa, cashew nuts,
+          palm kernel, or nursery seedlings or you'd like to discuss partnership
+          opportunities, we're ready to hear from you.
+        </p>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div class="contact-item-text">
+            <h4>Email Us</h4>
+            <a href="mailto:adegboyesamueloluwadipe@gmail.com"
+              >adegboyesamueloluwadipe@gmail.com</a
+            >
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-item-text">
+            <h4>Call or WhatsApp</h4>
+            <a href="tel:+2348012345678">+234 801 234 5678</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-item-text">
+            <h4>Farm Location</h4>
+            <p>
+              9, Adegboye Street Iju, Ondo State, Nigeria — Office &amp; Farm,
+              by appointment
+            </p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🏢</div>
+          <div class="contact-item-text">
+            <h4>CAC Registration</h4>
+            <p>Registered Business · RC No. 9513083</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <span class="footer-logo">🌿 AgriFusion Farms</span>
+          <p class="footer-desc">
+            Dipe Adegboye AgriFusion Farms is a fully registered Nigerian
+            agricultural enterprise cultivating palm, cocoa, and cashew with
+            purpose. From our nursery to your business — quality you can trust.
+          </p>
+          <span class="cac-badge">✅ CAC Registered · RC No. 9513083</span>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#products">Palm Tree &amp; Kernel</a></li>
+            <li><a href="#sale">Palm Oil (Kegs)</a></li>
+            <li><a href="#sale">Palm Oil (Drums)</a></li>
+            <li><a href="#products">Cocoa Seedlings</a></li>
+            <li><a href="#products">Cashew Nuts</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#nursery">Cocoa Seedlings</a></li>
+            <li><a href="#nursery">Palm Kernel Seedlings</a></li>
+            <li><a href="#contact">Bulk Orders</a></li>
+            <li><a href="#contact">Farm Partnerships</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li>
+              <a href="mailto:adegboyesamueloluwadipe@gmail.com"
+                >adegboyesamueloluwadipe@gmail.com</a
+              >
+            </li>
+            <li><a href="tel:+2348168410086">+234 816 841 0086</a></li>
+            <li>
+              <a href="#contact">9, Adegboye Street Iju, Ondo State, Nigeria</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2026 Dipe Adegboye AgriFusion Farms. All rights reserved.
+        </p>
+        <p class="footer-credit">Designed for Nigerian Agriculture</p>
+      </div>
+    </footer>
+
+    <script>
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      reveals.forEach((el) => observer.observe(el));
+
+      const nav = document.querySelector("nav");
+      window.addEventListener("scroll", () => {
+        nav.style.padding = window.scrollY > 60 ? "12px 6%" : "18px 6%";
+      });
+    </script>
+  </body>
+</html>
